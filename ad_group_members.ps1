@@ -1,0 +1,1 @@
+Get-ADGroupMember -identity “PRK-PD” | select name,SamAccountName | Export-csv -path C:OutputGroupmembers.csv -NoTypeInformation
