@@ -1,0 +1,2 @@
+$Groups = (Get-ADPrincipalGroupMembership -Identity USERNAME | Select-Object -ExpandProperty name) -join ','
+get-aduser USERNAME -properties memberof,samaccountname,givenname,surname | select samaccountname,givenname,surname, @{name="Groups";expression={$Groups}} | export-csv .\ADUsers.csv -Delimiter ";" -NoTypeInformation -Encoding UTF8

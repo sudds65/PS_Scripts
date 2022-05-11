@@ -1,0 +1,1 @@
+get-adgroup -filter * | sort name | select Name| Export-csv -path C:OutputGroups.csv -NoTypeInformation
